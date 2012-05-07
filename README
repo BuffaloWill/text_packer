@@ -1,6 +1,33 @@
-This tool can be used to very basically hide text inside of different file formats. The idea would be to use the file as a covert channel for C&C. Looking at the mso and swf files the text is usually pretty obvious but encryption should be sufficient to protect snooping.
+This tool can be used to basically hide text inside of different file formats. The idea would be to use the file as a covert channel for C&C. In the mso and swf files the text is usually pretty obvious but encryption should be sufficient to protect snooping.
 
 Supported File Formats:
 - JPG
 - Microsoft Office (docx, xlsx, pptx)
 - SWF (not well tested but seems to work)
+
+
+EXAMPLES
+
+-- Pack a SWF file with "HELLO WORLD"
+$> ruby text_packer.rb -p -f swf -i test.swf -c "HELLO WORLD"
+test.swf PACKED
+
+-- Unpack a SWF file
+$> ruby text_packer.rb -u -f swf -i test.swf
+HELLO WORLD
+
+-- Pack a JPG file with "HELLO WORLD"
+$> ruby text_packer.rb -p -f jpg -i test.jpg -c "HELLO WORLD"
+test.jpg PACKED
+
+-- Unpack a DOCX file
+$> ruby text_packer.rb -u -f jpg -i test.jpg
+HELLO WORLD
+
+-- Pack a DOCX file with "HELLO WORLD"
+$> ruby text_packer.rb -p -f mso -i test.docx -c "HELLO WORLD"
+test.docx PACKED
+
+-- Unpack a DOCX file
+$> ruby text_packer.rb -u -f mso -i test.docx
+HELLO WORLD

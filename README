@@ -20,7 +20,7 @@ HELLO WORLD
 $> ruby text_packer.rb -p -f jpg -i test.jpg -c "HELLO WORLD"
 test.jpg PACKED
 
--- Unpack a DOCX file
+-- Unpack a JPG file
 $> ruby text_packer.rb -u -f jpg -i test.jpg
 HELLO WORLD
 

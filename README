@@ -1,0 +1,6 @@
+This tool can be used to very basically hide text inside of different file formats. The idea would be to use the file as a covert channel for C&C. Looking at the mso and swf files the text is usually pretty obvious but encryption should be sufficient to protect snooping.
+
+Supported File Formats:
+- JPG
+- Microsoft Office (docx, xlsx, pptx)
+- SWF (not well tested but seems to work)
